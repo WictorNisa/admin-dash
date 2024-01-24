@@ -19,7 +19,7 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) 3fr;
+  grid-template-columns: minmax(280px, 0.5fr) 3fr;
   grid-template-rows: 1fr 2fr 2fr;
   grid-template-areas:
     "sidebar header"
@@ -31,13 +31,10 @@
 
 .sidebar {
   grid-area: sidebar;
-  background-color: var(--maya-blue);
+  background-color: var(--french-blue);
   display: grid;
-  grid-template-rows: minmax(100px, 0.2fr) minmax(250px, 0.5fr) minmax(
-      300px,
-      1fr
-    );
-  align-items: center;
+  grid-template-rows: minmax(100px, 0.2fr) minmax(300px, 1fr) minmax(300px, 1fr);
+
   padding-left: 1em;
   color: black;
   font-weight: bold;
@@ -46,12 +43,53 @@
 .sidebar-header {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
 }
 
+.sidebar-header h1{
+    padding-left: .5em;
+}
+
+.sidebar-group {
+  margin-bottom: 1em;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+}
+
+.sidebar-group p {
+  padding-left: 0.5em;
+}
+
+.sidebar-main {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.sidebar-settings {
+  margin: 1em auto auto auto;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-icon {
+  max-width: 10%;
+}
+
 .calender-icon {
-  max-width: 15%;
+  max-width: 12%;
 }
 
 /* HEADER STYLES */
@@ -109,6 +147,7 @@ input {
 }
 
 .user-greetings {
+  height: 100%;
   display: grid;
   grid-template-columns: minmax(100px, 0.5fr) minmax(320px, 0.5fr);
   justify-items: center;
@@ -136,13 +175,119 @@ input {
   grid-area: text;
 }
 .user-pfp-big {
-  max-width: 45%;
+  max-width: 20%;
 
   grid-area: avatar;
 }
 
+.header-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-items: center;
+  align-items: center;
+}
+
+.header-button {
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--french-blue);
+  background-color: var(--french-blue);
+  color: #fff;
+}
+
+/* DASHBOARD STYLES */
+
 .dashboard {
   grid-area: dashboard;
   background-color: lightgrey;
-  
+  display: grid;
+  grid-template-columns: minmax(500px, 1fr) minmax(150px, 0.5fr);
+  grid-template-rows: minmax(30px, 0.2fr) 1fr 1fr;
+  grid-template-areas:
+    "projectheading  annonheading"
+    "projectwrapper  trendwrapper"
+    "projectwrapper  trendwrapper";
+  grid-gap: 10px;
+  padding: 1em;
+}
+
+.project-wrapper {
+  grid-area: projectwrapper;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-gap: 15px;
+}
+
+.project-box {
+  background-color: white;
+  border-left: 7px solid var(--fawn);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.project-icons-box {
+  width: 45%;
+  height: 100%;
+  margin-right: 0;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-icon {
+  max-width: 20%;
+  margin: auto;
+}
+
+.project-box h1 {
+  font-size: 1em;
+}
+.project-box p {
+  font-size: 0.7em;
+}
+
+.project-heading {
+  grid-area: projectheading;
+}
+
+.announcments-heading {
+  grid-area: annonheading;
+}
+
+.trending-wrapper {
+  grid-area: trendwrapper;
+  display: grid;
+  grid-template-rows: 1fr 0.2fr 1fr;
+  justify-items: center;
+}
+
+.trending-box {
+  background-color: white;
+  height: 100%;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.trending-box h3 {
+  font-size: 1em;
+}
+
+.trending-box p {
+  font-size: 0.8em;
+}
+
+.trending-avatar {
+  max-width: 10%;
+}
+
+.user-trending {
 }
