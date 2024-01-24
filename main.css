@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --maya-blue: #79c6fcff;
+  --maya-blue-2: #82bee8ff;
+  --fawn: #f5b384ff;
+  --french-blue: #1374baff;
+  --celestial-blue: #5d9fcfff;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 3fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar dashboard"
+    "sidebar dashboard";
+}
+
+/* SIDEBAR STYLES */
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--maya-blue);
+  display: grid;
+  grid-template-rows: minmax(100px, 0.2fr) minmax(250px, 0.5fr) minmax(
+      300px,
+      1fr
+    );
+  align-items: center;
+  padding-left: 1em;
+  color: black;
+  font-weight: bold;
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.calender-icon {
+  max-width: 15%;
+}
+
+/* HEADER STYLES */
+
+.header {
+  grid-area: header;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: minmax(300px, 2fr) minmax(320px, 0.5fr);
+}
+
+.searchbar-icon {
+  max-width: 5%;
+}
+
+.searchbar-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+  padding-left: 1em;
+  height: 100%;
+}
+
+input {
+  width: 400px;
+  margin-left: 0.8em;
+  border-radius: 10px;
+  border: 1px solid grey;
+  height: 23px;
+}
+
+.user-settings {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(3, auto);
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+}
+
+.user-settings p {
+  margin: auto 1em auto 0;
+  font-weight: bold;
+}
+
+.notification-icon {
+  max-width: 20%;
+  margin: auto 0 auto auto;
+}
+
+.user-pfp {
+  max-width: 40%;
+}
+
+.user-greetings {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.5fr) minmax(320px, 0.5fr);
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    "avatar greetpara"
+    "avatar greetuser";
+}
+
+#greeting-para {
+  grid-area: greetpara;
+  margin: auto auto 0 0;
+  font-weight: bold;
+  font-size: 0.7em;
+}
+
+#greeting-username {
+  grid-area: greetuser;
+  margin: 0.5em auto auto 0;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.user-greetings p {
+  grid-area: text;
+}
+.user-pfp-big {
+  max-width: 45%;
+
+  grid-area: avatar;
+}
+
+.dashboard {
+  grid-area: dashboard;
+  background-color: lightgrey;
+  
+}
