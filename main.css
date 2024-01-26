@@ -46,8 +46,8 @@
   align-items: center;
 }
 
-.sidebar-header h1{
-    padding-left: .5em;
+.sidebar-header h1 {
+  padding-left: 0.5em;
 }
 
 .sidebar-group {
@@ -149,7 +149,7 @@ input {
 .user-greetings {
   height: 100%;
   display: grid;
-  grid-template-columns: minmax(100px, 0.5fr) minmax(320px, 0.5fr);
+  grid-template-columns: minmax(200px, 0.5fr) minmax(320px, 0.2fr);
   justify-items: center;
   align-items: center;
   grid-template-areas:
@@ -176,7 +176,7 @@ input {
 }
 .user-pfp-big {
   max-width: 20%;
-
+  margin: auto 1em auto auto;
   grid-area: avatar;
 }
 
@@ -266,7 +266,7 @@ input {
 .trending-wrapper {
   grid-area: trendwrapper;
   display: grid;
-  grid-template-rows: 1fr 0.2fr 1fr;
+  grid-template-rows: minmax(100px, 1fr) minmax(20px, 0.2fr) minmax(100px, 1fr);
   justify-items: center;
 }
 
@@ -275,19 +275,40 @@ input {
   height: 100%;
   width: 90%;
   border-radius: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em 0 1em;
 }
 
 .trending-box h3 {
   font-size: 1em;
+  padding-top: 0.5em;
 }
 
 .trending-box p {
   font-size: 0.8em;
+  padding-bottom: 0.5em;
+  font-size: 12px;
 }
 
 .trending-avatar {
-  max-width: 10%;
+  max-width: 15%;
+  justify-self: center;
+}
+
+#trending-avatar-box {
+  display: flex;
+  
+}
+
+#trending-avatar-box p {
+    margin: auto;
 }
 
 .user-trending {
+  display: flex;
+  margin-bottom: 1em;
 }
